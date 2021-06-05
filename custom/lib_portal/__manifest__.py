@@ -6,12 +6,19 @@
     'description': """
     Module to digitalise and manage the library operations
     """,
-    'depends' : ['base'],
+    'depends' : [
+        'base',
+        'sale',
+        'product',
+        'contacts',
+        'hr',
+        ],
     'sequence' : 1,
     'installable': True,
     'application': True,
     'auto_install': False,
     'category' : 'Library',
-    'data' : [],
+    'data' : [ 'security/ir.model.access.csv',
+    ],
 
 }
