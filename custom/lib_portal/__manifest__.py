@@ -7,18 +7,19 @@
     Module to digitalise and manage the library operations
     """,
     'depends' : [
-        'base',
-        'sale',
         'product',
         'contacts',
-        'hr',
+        'hr'
         ],
     'sequence' : 1,
     'installable': True,
     'application': True,
     'auto_install': False,
     'category' : 'Library',
-    'data' : [ 'security/ir.model.access.csv',
+    'data' : [ 
+        'security/ir.model.access.csv',
+        'views/libraryManagement.xml',
+
     ],
 
 }

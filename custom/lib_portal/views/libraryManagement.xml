@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="view_issue_book_form" model="ir.ui.view">
+            <field name="name">issue.book.form</field>
+            <field name="model">issue.book</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="fromDate"/>
+                                <field name="toDate"/>
+                            </group>
+                            <group>
+                                <!-- <field name="bookName"/> -->
+                                <field name="partner_id" widget="res_partner_many2one" context="{'res_partner_search_mode': 'customer', 'show_address': 1, 'show_vat': True}" options="{&quot;always_reload&quot;: True}"/>
+                                <field name="authorName"/>
+                                <!-- <field name="shelf"/> -->
+                            </group>
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_issue_book_tree" model="ir.ui.view">
+            <field name="name">issue.book.tree</field>
+            <field name="model">issue.book</field>
+            <field name="priority">2</field>
+            <field name="arch" type="xml">
+                <tree string="Book Issue records" multi_edit="1" sample="1">
+                    <!-- <field name="bookName"/> -->
+                    <field name="customer_name"/>
+                    <field name="authorName"/>
+                    <field name="fromDate"/>
+                    <!-- <field name="shelf"/> -->
+                    <field name="toDate" widget="date" optional="show"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="books_template_action" model="ir.actions.act_window">
+            <field name="name">Books</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">issue.book</field>
+            <field name="view_mode">tree,kanban,form,activity</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Issue a book by hitting on create!!
+                </p><p>
+                    You must create a book issue order to issue a book to the customer.
+                </p>
+            </field>
+        </record>
+        <menuitem id="library_menu_root"
+                  name="Library"
+                  sequence="10"/>
+
+        <menuitem id="books_menu"
+                  name="Books"
+                  parent="library_menu_root"
+                  sequence="2"/>
+
+        <menuitem id="book_issue_menu"
+                  name="Issue Books"
+                  parent="books_menu"
+                  action="books_template_action"
+                  sequence="3"/>
+        <menuitem id="res_partner_menu"
+            parent="books_menu"
+            action="account.res_partner_action_customer"
+            sequence="4" />
+
+
+</odoo>
