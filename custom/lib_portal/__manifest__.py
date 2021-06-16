@@ -6,20 +6,18 @@
     'description': """
     Module to digitalise and manage the library operations
     """,
-    'depends' : [
-        'product',
-        'contacts',
-        'hr'
-        ],
+    'category' : 'Library',
+    'depends' : ['product', 'contacts', 'hr', 'mail'],
+    'data' : [ 
+        'security/ir.model.access.csv',
+        'wizard/library_wizard_view.xml',
+        'views/res_partner.xml',
+        'views/product_template.xml',
+        'views/libraryManagement.xml',
+    ],
     'sequence' : 1,
     'installable': True,
     'application': True,
     'auto_install': False,
-    'category' : 'Library',
-    'data' : [ 
-        'security/ir.model.access.csv',
-        'views/libraryManagement.xml',
-
-    ],
 
 }
