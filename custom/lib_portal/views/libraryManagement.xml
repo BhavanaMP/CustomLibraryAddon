@@ -121,7 +121,7 @@
             <field name="priority">2</field>
             <field name="arch" type="xml">
                 <tree string="Book Issue records" multi_edit="1">
-                    <field name="book_name"/>
+                    <field name="book_id"/>
                     <field name="customer_name"/>
                     <field name="from_date"/>
                     <field name="emp_id"/>
