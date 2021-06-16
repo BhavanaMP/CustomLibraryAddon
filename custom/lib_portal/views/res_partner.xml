@@ -12,7 +12,7 @@
                     <field name="date_of_death"/>
                 </xpath>
                 <xpath expr="//field[@name='category_id']" position="before">
-                    <field name="languages_known"/>
+                    <field name="languages_known" widget="many2many_tags"/>
                 </xpath>
             </field>
         </record>
