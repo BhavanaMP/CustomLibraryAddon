@@ -5,9 +5,11 @@ class LibraryWizard(models.TransientModel):
     _name = 'library.wizard'
     _description = 'Wizard for Library Module'
     
-    book_id = fields.Many2one('product.template',string='Book Name')
-    # shelf_id = fields.Integer(book_id.shelf_id, readonly=True)
+    book_id = fields.Many2one('product.template', string='Book Name', 
+                              required=True)
+    shelf_id = fields.Char(related='book_id.default_code')
     
-    def action_library_wizard_update(self):
+    def action_library_wizard_show(self):
         #function to update the shelf ID
-        print(self.book_id.name)
+        print(self.shelf_id)
+        return True

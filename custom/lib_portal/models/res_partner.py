@@ -10,11 +10,9 @@ class ResPartner(models.Model):
         return True
 
     date_of_birth = fields.Date(string='Date of Birth', 
-                                default=fields.Date.context_today, 
-                                required=True)
+                                default=fields.Date.context_today)
     date_of_death = fields.Date(string='Date of Death') 
     languages_known = fields.Many2many('res.lang',string='Known Languages')
-    # interest_ids = fields.Many2many('res.partner.category', string='Interests')
     is_member = fields.Char(compute='_isMember', string='Membership Status')
    
   

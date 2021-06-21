@@ -7,6 +7,13 @@
             <field name="model">product.template</field>
             <field name="inherit_id" ref="product.product_template_only_form_view"/>
             <field name="arch" type="xml">
+                <xpath expr="//field[@name='default_code']" position="after">
+                <div>
+                    <field name="is_book"/>
+                    <label for="is_book"/>
+                </div>
+                    
+                </xpath>
                 <xpath expr="//field[@name='default_code']" position="before">
                     <field name="author_id" />
                 </xpath>
@@ -14,8 +21,8 @@
                     <field name="publication_date" />
                     <field name="book_language"/>
                 </xpath>
-                <xpath expr="//field[@name='categ_id']" position="after">
-                    <field name="book_description"/>
+                <xpath expr="//field[@name='categ_id']">
+                    <field name="book_description" />
                 </xpath>
             </field>
         </record>

@@ -1,6 +1,6 @@
 {
     'name' : 'Library Portal',
-    'version' : '1.1',
+    'version' : '14.0.1.1.0',
     'author' : 'bloopark', 
     'summary': 'Library Management System',
     'description': """

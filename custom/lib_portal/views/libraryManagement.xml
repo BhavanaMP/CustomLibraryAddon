@@ -14,12 +14,13 @@
                             <group>
                                 <field name="book_id"/>
                                 <field name="from_date"/>
-                                <field name="emp_id" widget="hr_employee_many2one"/>
+                                <field name="employee_id" widget="hr_employee_many2one"/>
                             </group>
                             <group>
                                 <field name="author_name"/>
                                 <field name="due_date"/>
                                 <field name="partner_id" widget="res_partner_many2one"/>
+                                <field name="state"/>
                             </group>
                         </group>
                     </sheet>
@@ -36,11 +37,11 @@
             <field name="name">issue.book.calendar</field>
             <field name="model">issue.book</field>
             <field name="arch" type="xml">
-                <calendar string="Calendar View" date_start="from_date" date_stop="due_date" color="partner_id">
+                <calendar string="Calendar View" date_start="from_date" date_delay="due_date" color="partner_id">
                     <field name="book_name"/>
                     <field name="partner_id"/>
                     <field name="due_date"/>
-                    <field name="emp_id"/>
+                    <field name="employee_id"/>
                     <field name="author_name"/>
                 </calendar>
             </field>
@@ -54,7 +55,7 @@
                     <filter string="Book Name"  name="book_name"/>
                     <filter string="Author Name" name="author_name" />
                     <filter string="Customer Name" name="partner_id"/> 
-                    <filter string="Employee" name="emp_id"/> 
+                    <filter string="Employee" name="employee_id"/> 
                     <filter string="From Date" name="from_date"/>
                     <filter string="Due Date" name="due_date"/> 
                     <field name="book_name"/>
@@ -62,13 +63,13 @@
                     <field name="due_date"/>
                     <field name="from_date"/>
                     <field name="partner_id"/>
-                    <field name="emp_id"/>
+                    <field name="employee_id"/>
                     <separator/>
                     <group expand="0" string="Group By">
                         <filter string="Book Name" name="book_name"  context="{'group_by':'book_name'}"/>
                         <filter string="Author Name" name="author_name"  context="{'group_by':'author_name'}"/>
                         <filter string="Customer Name" name="partner_id"  context="{'group_by':'partner_id'}"/> 
-                        <filter string="Employee" name="emp_id"  context="{'group_by':'emp_id'}"/> 
+                        <filter string="Employee" name="employee_id"  context="{'group_by':'employee_id'}"/> 
                     </group> 
                 </search>
             </field>
@@ -120,18 +121,19 @@
             <field name="model">issue.book</field>
             <field name="priority">2</field>
             <field name="arch" type="xml">
-                <tree string="Book Issue records" multi_edit="1">
-                    <field name="book_id"/>
+                <tree string="Book Issue records" multi_edit="1" default_order="from_date" decoration-warning="due_date == (context_today() - relativedelta(days=5)).strftime('%Y-%m-%d')">
+                    <field name="book_name"/>
                     <field name="customer_name"/>
                     <field name="from_date"/>
-                    <field name="emp_id"/>
+                    <field name="employee_id"/>
                     <field name="due_date"/>
+                    <field name="state"/>
                 </tree>
             </field>
         </record>
 
         <record id="books_template_action" model="ir.actions.act_window">
-            <field name="name">Books</field>
+            <field name="name">Booking</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">issue.book</field>
             <field name="view_mode">tree,kanban,form,activity,calendar</field>
@@ -153,10 +155,35 @@
                   parent="library_menu_root"
                   sequence="2"/>
 
-        <menuitem id="res_partner_menu"
+        <menuitem id="res_partner_menu" 
+                  name='Contacts'
                   parent="library_menu_root"
                   action="base.action_partner_form"
                   sequence="3" />
+
+        <menuitem id="library_customers_menu" 
+                  name='Customers'
+                  parent="res_partner_menu"
+                  action="base.action_partner_form"
+                  sequence="1" />
+
+        <menuitem id="book_authors_menu" 
+                  name='Authors'
+                  parent="res_partner_menu"
+                  action="base.action_partner_form"
+                  sequence="2" />
+
+        <menuitem id="book_editorial_menu" 
+                  name='Editorials'
+                  parent="res_partner_menu"
+                  action="base.action_partner_form"
+                  sequence="3" />
+        
+        <menuitem id="library_editorial_menu" 
+                  name='Employees'
+                  parent="res_partner_menu"
+                  action="hr.open_view_employee_list_my"
+                  sequence="4" />
 
         <menuitem id="book_issue_menu"
                   name="Issue Books"
