@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="view_issue_book_form" model="ir.ui.view">
+            <field name="name">issue.book.form</field>
+            <field name="model">issue.book</field>
+            <field name="priority">1</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <field name="state" widget="statusbar" options="{'clickable' : '1' }"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="book_id"/>
+                                <field name="from_date"/>
+                                <field name="employee_id" widget="hr_employee_many2one"/>
+                            </group>
+                            <group>
+                                <field name="author_name"/>
+                                <field name="due_date"/>
+                                <field name="partner_id" widget="res_partner_many2one"/>
+                                <field name="state"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="message_ids"/>
+                        <field name="activity_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_issue_book_calendar" model="ir.ui.view">
+            <field name="name">issue.book.calendar</field>
+            <field name="model">issue.book</field>
+            <field name="arch" type="xml">
+                <calendar string="Calendar View" date_start="from_date" date_delay="due_date" color="partner_id">
+                    <field name="book_name"/>
+                    <field name="partner_id"/>
+                    <field name="due_date"/>
+                    <field name="employee_id"/>
+                    <field name="author_name"/>
+                </calendar>
+            </field>
+        </record>
+
+        <record id="view_issue_book_search" model="ir.ui.view">
+            <field name="name">issue.book.search</field>
+            <field name="model">issue.book</field>
+            <field name="arch" type="xml">
+                <search string="Books">
+                    <filter string="Book Name"  name="book_name"/>
+                    <filter string="Author Name" name="author_name" />
+                    <filter string="Customer Name" name="partner_id"/> 
+                    <filter string="Employee" name="employee_id"/> 
+                    <filter string="From Date" name="from_date"/>
+                    <filter string="Due Date" name="due_date"/> 
+                    <field name="book_name"/>
+                    <field name="author_name"/>
+                    <field name="due_date"/>
+                    <field name="from_date"/>
+                    <field name="partner_id"/>
+                    <field name="employee_id"/>
+                    <separator/>
+                    <group expand="0" string="Group By">
+                        <filter string="Book Name" name="book_name"  context="{'group_by':'book_name'}"/>
+                        <filter string="Author Name" name="author_name"  context="{'group_by':'author_name'}"/>
+                        <filter string="Customer Name" name="partner_id"  context="{'group_by':'partner_id'}"/> 
+                        <filter string="Employee" name="employee_id"  context="{'group_by':'employee_id'}"/> 
+                    </group> 
+                </search>
+            </field>
+        </record>
+
+        <record id="view_issue_book_kanban" model="ir.ui.view">
+            <field name="name">issue.book.kanban</field>
+            <field name="model">issue.book</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="book_name"/>
+                    <field name="author_name"/>
+                    <field name="due_date"/>
+                    <field name="from_date"/>
+                    <field name="partner_id"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                           <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_product_template_kanban">
+                                    <t t-set="placeholder" t-value="'/base/static/img/avatar_grey.png'"/>
+                                    <div class="o_kanban_image_fill_left o_kanban_image_full" t-attf-style="background-image: url(#{kanban_image('product.template', 'image_128', placeholder)})"/>
+                                
+                                <div class="oe_kanban_details d-flex flex-column">
+                                    <strong class="o_kanban_record_title oe_partner_heading">Book Name: <field name="book_name"/></strong>
+                                    <div class="o_kanban_tags_section oe_kanban_partner_categories"/>
+                                    <ul>
+                                        <li>
+                                            Customer Name : <field name="partner_id"/>
+                                        </li>
+                                        <li>
+                                            Author Name : <field name="author_name"/>
+                                        </li>
+                                        <li>
+                                            From Date: <field name="from_date"/>
+                                        </li>
+                                        <li>
+                                            Due Date: <field name="due_date"/>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="view_issue_book_tree" model="ir.ui.view">
+            <field name="name">issue.book.tree</field>
+            <field name="model">issue.book</field>
+            <field name="priority">2</field>
+            <field name="arch" type="xml">
+                <tree string="Book Issue records" multi_edit="1" default_order="from_date" decoration-warning="due_date == (context_today() - relativedelta(days=5)).strftime('%Y-%m-%d')">
+                    <field name="book_name"/>
+                    <field name="customer_name"/>
+                    <field name="from_date"/>
+                    <field name="employee_id"/>
+                    <field name="due_date"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="books_template_action" model="ir.actions.act_window">
+            <field name="name">Booking</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">issue.book</field>
+            <field name="view_mode">tree,kanban,form,activity,calendar</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Issue a book by hitting on create!!
+                </p><p>
+                    You must create a book issue order to issue a book to the customer.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="library_menu_root"
+                  name="Library"
+                  sequence="10"/>
+
+        <menuitem id="books_menu"
+                  name="Books"
+                  parent="library_menu_root"
+                  sequence="2"/>
+
+        <menuitem id="res_partner_menu" 
+                  name='Contacts'
+                  parent="library_menu_root"
+                  action="base.action_partner_form"
+                  sequence="3" />
+
+        <menuitem id="library_customers_menu" 
+                  name='Customers'
+                  parent="res_partner_menu"
+                  action="base.action_partner_form"
+                  sequence="1" />
+
+        <menuitem id="book_authors_menu" 
+                  name='Authors'
+                  parent="res_partner_menu"
+                  action="base.action_partner_form"
+                  sequence="2" />
+
+        <menuitem id="book_editorial_menu" 
+                  name='Editorials'
+                  parent="res_partner_menu"
+                  action="base.action_partner_form"
+                  sequence="3" />
+        
+        <menuitem id="library_editorial_menu" 
+                  name='Employees'
+                  parent="res_partner_menu"
+                  action="hr.open_view_employee_list_my"
+                  sequence="4" />
+
+        <menuitem id="book_issue_menu"
+                  name="Issue Books"
+                  parent="books_menu"
+                  action="books_template_action"
+                  sequence="4"/>
+
+        <menuitem id="book_list_menu"
+                  name="All Books"
+                  parent="books_menu"
+                  action="sale.product_template_action"
+                  sequence="5"/>
+        
+        <menuitem id="locate_book_wizard_menu"
+                  name="Locate Books"
+                  parent="books_menu"
+                  action="library_wizard_action"
+                  sequence="6"/>
+
+</odoo>
