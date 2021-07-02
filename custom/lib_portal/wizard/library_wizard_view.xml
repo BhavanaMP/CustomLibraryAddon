@@ -1,27 +1,27 @@
 <?xml version="1.0"?>
 <odoo>
-        <record id="library_wizard_view_form" model="ir.ui.view">
-            <field name="name">library.wizard.form</field>
-            <field name="model">library.wizard</field>
+        <record id="library_scrap_warning_form" model="ir.ui.view">
+            <field name="name">lib.wizard.form</field>
+            <field name="model">lib.wizard</field>
             <field name="arch" type="xml">
-                <form string="Locate Book">
+                <form string="Raise Warning">
                     <group class="oe_title">
-                        <field name="book_id"/>
+                        <field name="text"/>
                     </group>
                     <footer>
-                        <button name="action_library_wizard_show" string="Show" type="object" class="btn-primary"/>
-                        <button string="Ok" class="btn-secondary" special="cancel"/>
+                        <button name="do_scrap" string="Yes" type="object" class="btn-primary"/>
+                        <button string="No" class="btn-secondary" special="cancel"/>
                     </footer>
                 </form>
             </field>
         </record>
 
         <record id="library_wizard_action" model="ir.actions.act_window">
-            <field name="name">Library Wizard</field>
+            <field name="name">Warning!</field>
             <field name="type">ir.actions.act_window</field>
-            <field name="res_model">library.wizard</field>
+            <field name="res_model">lib.wizard</field>
             <field name="view_mode">form</field>
-            <field name="view_id" ref="library_wizard_view_form"/>
+            <field name="view_id" ref="library_scrap_warning_form"/>
             <field name="target">new</field>
         </record>
 </odoo>

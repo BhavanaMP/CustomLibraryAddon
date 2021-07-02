@@ -12,9 +12,12 @@ class ResPartner(models.Model):
     date_of_birth = fields.Date(string='Date of Birth', 
                                 default=fields.Date.context_today)
     date_of_death = fields.Date(string='Date of Death') 
-    languages_known = fields.Many2many('res.lang',string='Known Languages')
+    languages_known = fields.Many2many('res.lang', 'partner_lang_rel', 
+                                       string='Known Languages')
+	is_author = fields.Boolean(string='Is a Author', default=False, store=True)
+    is_publisher = fields.Boolean(string='Is a Publisher', default=False, 
+                                  store=True)
     is_member = fields.Char(compute='_isMember', string='Membership Status')
-   
-  
-   
+    book_ids = fields.One2many('product.template', 'author_id')
+    publisher_ids = fields.One2many('product.template', 'publisher_id')  
 

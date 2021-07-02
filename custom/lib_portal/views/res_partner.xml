@@ -7,13 +7,38 @@
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
+                <xpath expr="//field[@name='company_type']" position="after">
+                    <div attrs="{'invisible': [('is_company', '=', True)]}">
+                        <field name="is_author"/>
+                        <label for="is_author"/>
+                    </div>
+
+                </xpath>
+                <xpath expr="//field[@name='company_type']" position="after">
+                    <div attrs="{'invisible': [('is_company', '=', False)]}">
+                        <field name="is_publisher"/>
+                        <label for="is_publisher"/>
+                    </div>
+                </xpath>
                 <xpath expr="//field[@name='function']" position="before">
                     <field name="date_of_birth" />
                     <field name="date_of_death"/>
                 </xpath>
                 <xpath expr="//field[@name='category_id']" position="before">
-                    <field name="languages_known" widget="many2many_tags"/>
+                    <field name="languages_known" widget="many2many_tags" options="{'no_create_edit': True}"/>
                 </xpath>
+                <notebook position="inside">
+                    <page name='books_written' string="Written Books" attrs = "{'invisible': [('is_author', '=', False)]}">
+                        <group col="3">
+                            <field name="book_ids" mode="kanban"/>
+                        </group>
+                    </page>
+                    <page name='books_published' string="Published Books" attrs = "{'invisible': [('is_publisher', '=', False)]}">
+                        <group col="3">
+                            <field name="publisher_ids" mode="kanban"/>
+                        </group>
+                    </page>
+                </notebook>
             </field>
         </record>
 

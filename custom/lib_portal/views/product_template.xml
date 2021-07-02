@@ -7,23 +7,29 @@
             <field name="model">product.template</field>
             <field name="inherit_id" ref="product.product_template_only_form_view"/>
             <field name="arch" type="xml">
-                <xpath expr="//field[@name='default_code']" position="after">
-                <div>
-                    <field name="is_book"/>
-                    <label for="is_book"/>
+            <div name="button_box" position="inside">
+                <button class="oe_stat_button"
+                        type="action"
+                        icon="fa-trash-o"
+                        name="%(stock.action_stock_scrap)d" string="Scrap" context="{'default_product_id': active_id, 'search_default_product_id': active_id}">
+                </button>
                 </div>
+                <xpath expr="//div[@name='options']" position="after"> 
+                     <div>
+                        <field name="is_book"/>
+                        <label for="is_book"/>
+                    </div>
                     
-                </xpath>
+                </xpath> 
                 <xpath expr="//field[@name='default_code']" position="before">
                     <field name="author_id" />
+                    <field name="publisher_id" />
                 </xpath>
                 <xpath expr="//field[@name='company_id']" position="after">
                     <field name="publication_date" />
                     <field name="book_language"/>
                 </xpath>
-                <xpath expr="//field[@name='categ_id']">
-                    <field name="book_description" />
-                </xpath>
+                
             </field>
         </record>
 

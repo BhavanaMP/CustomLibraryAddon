@@ -7,13 +7,22 @@
     Module to digitalise and manage the library operations
     """,
     'category' : 'Library',
-    'depends' : ['product', 'contacts', 'hr', 'mail'],
+    'depends' : ['product', 'contacts', 'hr', 'mail', 'stock'],
     'data' : [ 
+       
+        'data/res.partner.csv',
+        'data/book_publishers.xml',
         'security/ir.model.access.csv',
         'wizard/library_wizard_view.xml',
         'views/res_partner.xml',
         'views/product_template.xml',
-        'views/libraryManagement.xml',
+        'views/lib_issue_book.xml',
+        'report/res_partner_report.xml'
+        
+    ],
+    'demo' : [
+        
+         'demo/library_demo.xml',
     ],
     'sequence' : 1,
     'installable': True,

@@ -18,6 +18,7 @@ class IssueBook(models.Model):
     book_id = fields.Many2one('product.template', string = "Book")
     book_name = fields.Char(related='book_id.name', string = "Book", 
                             store=True)
+    is_author = fields.Boolean(related='partner_id.is_author')
     author_name = fields.Char(related='book_id.author_name', 
                               string = "Author", store=True)
     from_date = fields.Date(string='Start Date',
@@ -25,40 +26,58 @@ class IssueBook(models.Model):
     due_date = fields.Date(string="Return Date",
                            default=_check_due_date)
     employee_id = fields.Many2one('hr.employee', string='Employee')
-    state = fields.Selection(selection=[('plan', 'Planned'),
+    state = fields.Selection([('plan', 'Planned'),
                                          ('pick', 'Picked'),
-                                         ('late', 'Late'),
-                                         ('return', 'Returned'),], 
+                                         ('return', 'Returned'),
+                                         ('late', 'Late')], 
                               string='Status',default='plan',
-                              help="The current state of your book:")
+                              help="The current state of the booking:")
+    
+    @api.model
+    def create(self, vals_list):
+        bookissue_obj = super(IssueBook, self).create(vals_list)
+        product = self.env['product.product']
+        inventory_stock = self.env['stock.quant']
+        product_id = product.search([
+            ('product_tmpl_id', '=', bookissue_obj.book_id.id)]).id
+        qty_available = inventory_stock.search([
+            ('product_id', '=', product_id),('quantity', '>=', 0)]).quantity
+        if qty_available <= 0.0 :
+            raise ValidationError('Books are not available in stock to issue!!')
+        return super().create(vals_list)
+    
+    @api.model
+    def _compute_booking_state(self):
+        print(type(dict(self._fields['state'].selection).get(self.state)))
+        return dict(self._fields['state'].selection).get(self.state)
     
     @api.constrains('due_date')
     def _check_due_date(self):
         for record in self:
             if record.due_date <= record.from_date:
-                raise ValidationError("Due date cannot be before the start date")
-         
-    def getReservationState(self):
-        state='plan' 
-        #setting it temporarily.use the reservationState parameter from product
-        if state == "plan":
-            return True
-        else:
-            return False
-    def sendMailConfirmation(self):
-        #trigger mail using self.customer_email
-        return True  
-
-    def renewInfo(self):
-        #check the res.partner for renew info
-        return
+                raise ValidationError("Due date can't be before the start date")
     
-    def bookIssueRecord(self):
-        if self.getReservationState:
-            #save the record in the table issue_book
-            self.sendMailConfirmation()
-            #add params like book id,start data,end date
-            return
+    @api.onchange('from_date')
+    def on_change_from_date(self):
+        if self.from_date and self.due_date and self.due_date < self.from_date:
+            self.due_date = self.from_date
+
+    @api.onchange('due_date')
+    def _onchange_end_date(self):
+        if self.due_date and self.due_date < self.from_date:
+            self.from_date = self.due_date
+            
+    def action_set_status_planned(self):
+        self.state='plan'
+    
+    def action_set_status_picked(self):
+        self.state='pick'
+    
+    def action_set_status_returned(self):
+        self.state='return'
+        
+    def action_set_status_late(self):
+        self.state='late'
              
            
     
