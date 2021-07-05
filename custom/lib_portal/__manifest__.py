@@ -11,7 +11,8 @@
     'data' : [ 
        
         'data/res.partner.csv',
-        'data/book_publishers.xml',
+        'data/lib_data.xml',
+        'demo/lib_demo.xml',
         'security/ir.model.access.csv',
         'wizard/library_wizard_view.xml',
         'views/res_partner.xml',

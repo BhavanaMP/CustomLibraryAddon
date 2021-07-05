@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+                    <!-- Demo data for customers -->
+
+        <record id="lib_customer_1" model="res.partner">
+            <!-- <field name="partner_id" ref="base.partner_demo"/> -->
+            <field name="name">Jason Stathom</field>
+            <field name="is_company">0</field>
+            <field name="date_of_birth">1996-12-03</field>
+            <field name="email">demojason12@example.com</field>
+            <field name="languages_known" eval="[(6, 0, [ref('base.lang_zh_CN'), ref('base.lang_fr_BE')])]"/>
+            <field name="category_id" eval="[(6, 0, [ref('res_partner_interest_0'), ref('res_partner_interest_1')])]"/>
+            <field name="image_1920" type="base64" file="lib_portal/static/img/lib_customer_1.jpeg"/>
+        </record>
+
+        <record id="lib_customer_2" model="res.partner">
+            <field name="name">Chandler Bing</field>
+            <field name="is_company">0</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="company_name">YourCompany</field>
+            <field name="is_author">1</field>
+            <field name="street">1634 Arbor Way</field>
+            <field name="city">Magdeburg</field>
+            <field name="state_id" ref='base.state_au_6'/>
+            <field name="zip">95380</field>
+            <field name="country_id" ref="base.au"/>
+            <field name="email">demochandler@example.com</field>
+            <field name="phone">(623)-853-7197</field>
+            <field name="website">http://www.chandler-bing.com</field>
+            <field name="date_of_birth">1986-12-03</field>
+            <field name="languages_known" eval="[(6, 0, [ref('base.lang_zh_CN'), ref('base.lang_fr_BE')])]"/>
+            <field name="category_id" eval="[(6, 0, [ref('res_partner_interest_2'), ref('res_partner_interest_4')])]"/>
+            <field name="image_1920" type="base64" file="lib_portal/static/img/lib_customer_2.jpeg"/>
+        </record>
+
+        <record id="lib_customer_3" model="res.partner">
+            <field name="name">Joey Tribbiani</field>
+            <field name="is_company">0</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="company_name">YourCompany</field>
+            <field name="street">Walther Way</field>
+            <field name="city">Columbus</field>
+            <field name="state_id" ref='base.state_us_6'/>
+            <field name="zip">10112</field>
+            <field name="country_id" ref="base.us"/>
+            <field name="email">demojoey@example.com</field>
+            <field name="phone">(644)-893-0197</field>
+            <field name="website">http://www.joey-tribbiani.com</field>
+            <field name="date_of_birth">1989-12-03</field>
+            <field name="languages_known" eval="[(6, 0, [ref('base.lang_zh_CN'), ref('base.lang_fr_BE')])]"/>
+            <field name="category_id" eval="[(6, 0, [ref('res_partner_interest_0'), ref('res_partner_interest_1')])]"/>
+            <field name="image_1920" type="base64" file="lib_portal/static/img/lib_customer_3.jpeg"/>
+        </record>
+
+                     <!-- Demo Data for books -->
+
+        <record id="lib_book_1" model="product.template">
+            <field name="name">Indira Gandhi: A Life in Nature</field>
+            <field name="is_book">True</field>
+            <field name="type">product</field>
+            <field name="categ_id" ref="product_category_1"/>
+            <field name="author_id" ref="partner_authors_3"/>
+             <field name="publisher_id" ref="partner_publishers_2"/> 
+            <field name="qty_available">28.0</field>
+            <field name="barcode">978139995345</field>
+            <field name="description">This is the life story of Indira Gandhi</field>
+            <field name="publication_date">1996-12-03</field>
+            <field name="book_language" ref="base.lang_zh_CN"/>
+            <field name="image_1920" type="base64" file="lib_portal/static/img/lib_book_1.jpeg"/>
+        </record>
+
+        <record id="lib_book_demo_2" model="product.template">
+            <field name="name">What happened</field>
+            <field name="is_book">True</field>
+             <field name="type">product</field>
+            <field name="categ_id" ref="product_category_5"/>
+            <field name="author_id" ref="partner_authors_1"/>
+             <field name="publisher_id" ref="partner_publishers_3"/> 
+            <field name="qty_available">40.0</field>
+            <field name="barcode">9708399155346</field>
+            <field name="description">This is a mystery book by Hilary Clinton</field>
+            <field name="publication_date">1990-07-09</field>
+            <field name="book_language" ref="base.lang_en"/>
+            <field name="image_1920" type="base64" file="lib_portal/static/img/lib_book_demo_2.png"/>
+        </record>
+
+         <record id="lib_book_3" model="product.template">
+            <field name="name">History of Wolves</field>
+            <field name="is_book">True</field>
+            <field name="type">product</field>
+            <field name="categ_id" ref="product_category_2"/>
+            <field name="author_id" ref="partner_authors_2"/>
+             <field name="publisher_id" ref="partner_publishers_1"/> 
+            <field name="qty_available">18.0</field>
+            <field name="barcode">9780399055345</field>
+            <field name="description">This is the about evolution of wolves</field>
+            <field name="publication_date">1986-11-05</field>
+            <field name="book_language" ref="base.lang_en"/>
+            <field name="image_1920" type="base64" file="lib_portal/static/img/lib_book_3.jpeg"/>
+        </record>
+        
+
+                <!-- Demo Data for booking -->
+
+        <record id="booking_demo_1" model="issue.book">
+            <field name="book_id" ref="lib_book_1"/>
+            <field name="partner_id" ref="lib_customer_1"/>
+            <field name="from_date">2021-01-04</field>
+            <field name="due_date">2021-02-04</field>
+            <field name="employee_id" ref="hr.employee_niv"/>
+            <field name="state">plan</field>
+        </record> 
+
+         <record id="booking_demo_2" model="issue.book">
+            <field name="book_id" ref="lib_book_demo_2"/>
+            <field name="partner_id" ref="lib_customer_2"/>
+            <field name="from_date">2021-03-03</field>
+            <field name="due_date">2021-04-03</field>
+            <field name="employee_id" ref="hr.employee_niv"/>
+            <field name="state">pick</field> 
+        </record> 
+
+        <record id="booking_demo_3" model="issue.book">
+            <field name="book_id" ref="lib_book_3"/>
+            <field name="partner_id" ref="lib_customer_3"/>
+            <field name="from_date">2021-01-04</field>
+            <field name="due_date">2021-02-04</field>
+            <field name="employee_id" ref="hr.employee_niv"/>
+             <field name="state">late</field> 
+        </record> 
+
+        <record id="booking_demo_4" model="issue.book">
+            <field name="book_id" ref="lib_book_1"/>
+            <field name="partner_id" ref="lib_customer_1"/>
+            <field name="from_date">2021-01-04</field>
+            <field name="due_date">2021-02-04</field>
+            <field name="employee_id" ref="hr.employee_niv"/>
+            <field name="state">return</field> 
+        </record> 
+
+    </data>
+</odoo>

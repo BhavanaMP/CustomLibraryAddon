@@ -18,6 +18,9 @@ class ProductTemplate(models.Model):
                               string='Publisher', 
                               domain=['&',('is_company', '=', True),
                                       ('is_publisher', '=', True)])
+    quantity_id = fields.Many2one('stock.quant')
+    qty_available = fields.Float(related='quantity_id.available_quantity', store=True)
+    
     @api.onchange('is_book')
     def is_book_onchange(self):
         if self.is_book == True:
