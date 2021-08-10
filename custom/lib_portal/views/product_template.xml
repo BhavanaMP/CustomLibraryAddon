@@ -21,13 +21,14 @@
                     </div>
                     
                 </xpath> 
-                <xpath expr="//field[@name='default_code']" position="before">
-                    <field name="author_id" />
-                    <field name="publisher_id" />
+                
+                <xpath expr="//field[@name='default_code']" position="before"> 
+                    <field name="author_id"  attrs="{'invisible':[('is_book', '=', False)]}"/>
+                    <field name="publisher_id" attrs="{'invisible':[('is_book', '=', False)]}" />
                 </xpath>
-                <xpath expr="//field[@name='company_id']" position="after">
-                    <field name="publication_date" />
-                    <field name="book_language"/>
+                <xpath expr="//field[@name='company_id']" position="after" >
+                    <field name="publication_date" attrs="{'invisible':[('is_book', '=', False)]}"/>
+                    <field name="book_language" attrs="{'invisible':[('is_book', '=', False)]}"/>
                 </xpath>
                 
             </field>

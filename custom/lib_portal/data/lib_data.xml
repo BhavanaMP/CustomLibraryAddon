@@ -140,25 +140,24 @@
             <!-- Initial data for product category -->
 
         <record id="product_category_1" model="product.category">
-            <field name="name">Biography</field>
+            <field name="name" ref='res_partner_interest_6'/>
         </record>
 
         <record id="product_category_2" model="product.category">
-            <field name="name">Fanstasy</field>
+            <field name="name" ref='res_partner_interest_5'/>
         </record>
 
          <record id="product_category_3" model="product.category">
-            <field name="name">Scifi</field>
+    	    <field name="name" ref='res_partner_interest_1'/>
         </record>
 
          <record id="product_category_4" model="product.category">
-            <field name="name">Technical</field>
+            <field name="name" ref='res_partner_interest_5'/>
         </record>
 
         <record id="product_category_5" model="product.category">
-            <field name="name">Mystery</field>
-        </record>
+            <field name="name" ref='res_partner_interest_2'/>
+        </record>            
         
-
     </data>
 </odoo>

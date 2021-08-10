@@ -18,6 +18,7 @@
         'views/res_partner.xml',
         'views/product_template.xml',
         'views/lib_issue_book.xml',
+        'views/stock_scrap_views.xml',
         'report/res_partner_report.xml'
         
     ],

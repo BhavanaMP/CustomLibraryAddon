@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="stock_scrap_form_view_inherit" model="ir.ui.view">
+            <field name="name">stock.stock_scrap_form_view_inherited</field>
+            <field name="model">stock.scrap</field>
+            <field name="inherit_id" ref="stock.stock_scrap_form_view"/>
+            <field name="arch" type="xml">
+                 <xpath expr="//form/header/button[@name='action_validate']" position="replace">
+                    <button name="%(book_scrap_action)d" states="draft" string="Validate" type="action" class="oe_highlight" context="{'not_unlink_on_discard': True}"/> 
+                </xpath>
+
+            </field>
+        </record>
+
+    </data>
+</odoo> 

@@ -7,13 +7,19 @@
         <field name="arch" type="xml">
             <form>
                 <header>
+		
+		     <button name="stock" string="Mark Planned"
+                            type="object" class="oe_highlight"
+                            attrs="{'invisible': ['|', '|','|',('state','=','plan'),('state','=','return'), ('state', '=', 'late'), ('state', '=', 'pick')]}"
+                           />
                       <button name="action_set_status_picked" string="Mark Picked"
                             type="object" class="oe_highlight"
-                            attrs="{'invisible': ['|', '|',('state','=','return'), ('state', '=', 'late'), ('state', '=', 'pick')]}"/>
+                            attrs="{'invisible': ['|', '|','|',('state','=','draft'),('state','=','return'), ('state', '=', 'late'), ('state', '=', 'pick')]}"/>
                        <button name="action_set_status_returned" string="Mark Returned"
                             type="object" class="oe_highlight"
-                            attrs="{'invisible': ['|',('state','=','plan'), ('state', '=', 'return')]}"/>
-                        <field name="state" widget="statusbar" attrs="{'readonly':True}"/>
+                            attrs="{'invisible': ['|','|',('state','=','draft'),('state','=','plan'), ('state', '=', 'return')]}"/>
+                         
+                    <field name="state" widget="statusbar" attrs="{'readonly':True}"/>
                 </header>
                 <sheet>
                     <group>
@@ -257,6 +263,5 @@
 
     <menuitem id="book_list_menu" name="All Books" parent="books_menu" action="action_all_books" sequence="5"/>
 
-    <menuitem id="locate_book_wizard_menu" name="Locate Books" parent="books_menu" action="library_wizard_action" sequence="6"/>
 
 </odoo>

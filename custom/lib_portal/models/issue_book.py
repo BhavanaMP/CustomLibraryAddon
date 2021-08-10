@@ -26,12 +26,18 @@ class IssueBook(models.Model):
     due_date = fields.Date(string="Return Date",
                            default=_check_due_date)
     employee_id = fields.Many2one('hr.employee', string='Employee')
-    state = fields.Selection([('plan', 'Planned'),
+    state = fields.Selection([('draft', 'Draft'),
+                                        ('plan', 'Planned'),
                                          ('pick', 'Picked'),
                                          ('return', 'Returned'),
                                          ('late', 'Late')], 
-                              string='Status',default='plan',
+                              string='Status',default='draft',
                               help="The current state of the booking:")
+    
+    def stock(self):
+       
+		
+        #method for calling the stock picking
     
     @api.model
     def create(self, vals_list):
@@ -51,11 +57,11 @@ class IssueBook(models.Model):
         print(type(dict(self._fields['state'].selection).get(self.state)))
         return dict(self._fields['state'].selection).get(self.state)
     
-    @api.constrains('due_date')
+    @api.constrains('from_date', 'due_date')
     def _check_due_date(self):
         for record in self:
-            if record.due_date <= record.from_date:
-                raise ValidationError("Due date can't be before the start date")
+            if record.from_date and record.due_date and record.due_date <= record.from_date:
+                raise ValidationError("Due date can't be earlier than the start date")
     
     @api.onchange('from_date')
     def on_change_from_date(self):

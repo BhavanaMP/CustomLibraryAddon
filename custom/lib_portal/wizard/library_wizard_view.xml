@@ -1,27 +1,29 @@
 <?xml version="1.0"?>
 <odoo>
-        <record id="library_scrap_warning_form" model="ir.ui.view">
-            <field name="name">lib.wizard.form</field>
-            <field name="model">lib.wizard</field>
+        <record id="book_scrap_warning_form" model="ir.ui.view">
+            <field name="name">stock.scrap.wizard.form</field>
+            <field name="model">stock.scrap.wizard</field>
+            <field name="type">form</field>
             <field name="arch" type="xml">
-                <form string="Raise Warning">
-                    <group class="oe_title">
-                        <field name="text"/>
+                <form>
+                    <group>
+                            <p>Are you sure you want to scrap?  </p>
+                        
                     </group>
-                    <footer>
-                        <button name="do_scrap" string="Yes" type="object" class="btn-primary"/>
-                        <button string="No" class="btn-secondary" special="cancel"/>
+                     <footer>
+                        <button name="action_scrap_warning" string="Confirm" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
                     </footer>
                 </form>
             </field>
         </record>
 
-        <record id="library_wizard_action" model="ir.actions.act_window">
+        <record id="book_scrap_action" model="ir.actions.act_window">
             <field name="name">Warning!</field>
             <field name="type">ir.actions.act_window</field>
-            <field name="res_model">lib.wizard</field>
+            <field name="res_model">stock.scrap.wizard</field>
             <field name="view_mode">form</field>
-            <field name="view_id" ref="library_scrap_warning_form"/>
+            <field name="view_id" ref="book_scrap_warning_form"/>
             <field name="target">new</field>
         </record>
 </odoo>
