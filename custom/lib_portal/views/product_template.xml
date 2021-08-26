@@ -27,14 +27,10 @@
                         <field name="is_book"/>
                         <label for="is_book"/>
                     </div>
-
                 </xpath>
+                
                 <xpath expr="//field[@name='default_code']" position="replace">
                     <field name = "default_code" attrs = "{'invisible': [('is_book', '=', True)]}" />
-                </xpath>
-
-                <xpath expr="///field[@name='taxes_id']" position="attributes">
-                    <attribute name="invisible">True</attribute>
                 </xpath>
 
                 <xpath expr="//field[@name='barcode']" position="before">
