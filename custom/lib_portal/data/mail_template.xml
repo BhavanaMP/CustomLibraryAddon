@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+   <data>
+        <record id="email_template_status_late" model="mail.template">
+            <field name="name">Customer Notification : Send by email</field>
+            <field name="model_id" ref="lib_portal.model_issue_book"/>
+            <field name="email_from">${(object.employee_id.work_email) |safe}</field>
+            <field name="email_to">${object.partner_id.email}</field>
+            <field name="subject">(Ref ${object.name or 'n/a'}) :  Magdeburg Library ${ctx.get('subject')} ${object.book_name} </field>
+            <field name="body_html" type="html">
+            <div style="margin: 0px; padding: 0px;">
+                <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                    Dear ${object.partner_id.name},
+                    <br /><br />
+                    Our Library records states that the following book is ${ctx.get('book_state')}.
+                    <br /><br />
+                     % if object.book_name:
+                        Title: <strong> ${object.book_name}</strong>
+                    % else:
+                        Title:
+                    % endif
+                    <br />
+                    % if object.name:
+                        Reference: ${object.name}
+                    % endif
+                    <br />
+                    % if object.due_date:
+                        Due Date: ${object.due_date}
+                    % endif
+                    <br />
+                    % if object.author_name:
+                        Author: ${object.author_name}
+                    % endif
+                    <br /><br />
+                    ${ctx.get('message')}
+                    <br /><br />
+                    Do not hesitate to contact us if you have any questions.
+                    <br /><br />
+        
+                    Magdeburg City Library <br/>
+                    Walther Rathenau Strasse <br/>
+                    39104 <br/>
+                    +49 1734567890 <br/>
+                </p>
+            </div>                      
+            </field>
+            <field name="report_template" ref="bookings_detail_report"/>
+            <field name="report_name">Book_Issued_ ${(object.name or '' )}</field>
+        </record>
+    </data>
+</odoo>

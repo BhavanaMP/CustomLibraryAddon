@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="bookings_report_form" model="ir.ui.view">
+        <field name="name">bookings.report.wizard.form</field>
+        <field name="model">bookings.report.wiz</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Select values to generate Report">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            Select values to generate booking reports
+                        </h1>
+                    </div>
+                    <group>
+                        <group col="2" width="600" height="500" string="Duration">
+                            <field name="from_date"/>
+                            <field name="to_date"/>
+                        </group>
+                        <separator orientation="horizontal" />
+                        <group string="Customers" col="40">
+                            <field name="customer_ids" widget="many2many"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="bookings_report_wizard_action" model="ir.actions.act_window">
+        <field name="name">Generate Reports</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="context">{}</field>
+        <field name="res_model">bookings.report.wiz</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="bookings_report_form"/>
+        <field name="target">new</field>
+    </record>
+
+</odoo>
