@@ -153,8 +153,7 @@ class IssueBook(models.Model):
         move_ids = move._action_confirm()
         move_ids._action_assign()
         self.action_set_status_planned()
-        move.write({'library_id': self.id})
-        self.write({'picking_id': move.picking_id})
+        move.write({'library_id': self.id,'picking_id': move.picking_id})
         self.write({'move_id': move.id})
         return action
 

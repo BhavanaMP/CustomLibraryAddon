@@ -13,7 +13,6 @@
         'data/res.partner.csv',
         'data/library_cron.xml',
         'data/lib_data.xml',
-        'demo/lib_demo.xml',
         'report/bookings_detail_report.xml',
         'data/mail_template.xml',
         'security/ir.model.access.csv',
@@ -29,7 +28,7 @@
     ],
     'demo' : [
         
-         'demo/library_demo.xml',
+         'demo/lib_demo.xml',
     ],
     'sequence': 1,
     'installable': True,
