@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="view_picking_form_extend" model="ir.ui.view">
+      <field name="name">stock.picking.form.extend</field>
+      <field name="model">stock.picking</field>
+      <field name="inherit_id" ref="stock.view_picking_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="/form/header/button[@name='%(stock.act_stock_return_picking)d']" position="replace">
+          <button name="%(book_scrap_action)d" string="Return" attrs="{'invisible': [('state', '!=', 'done')]}" type="action" groups="base.group_user" context="{'not_unlink_on_discard': True,
+                    'text': 'Is the book damaged? If yes,please click confirm to scrap it','scrap_picking_return': True}" />
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>

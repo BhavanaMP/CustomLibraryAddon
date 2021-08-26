@@ -7,12 +7,12 @@
             <field name="model">stock.scrap</field>
             <field name="inherit_id" ref="stock.stock_scrap_form_view"/>
             <field name="arch" type="xml">
-                 <xpath expr="//form/header/button[@name='action_validate']" position="replace">
-                    <button name="%(book_scrap_action)d" states="draft" string="Validate" type="action" class="oe_highlight" context="{'not_unlink_on_discard': True}"/> 
+                <xpath expr="//form/header/button[@name='action_validate']" position="replace">
+                    <button name="%(book_scrap_action)d" states="draft" string="Validate" type="action" class="oe_highlight" context="{'not_unlink_on_discard': True,'scrap_picking_return': False,
+                    'text': 'The Product will be moved to scrap once you click confirm.Do you want to confirm?'}"/>
                 </xpath>
 
             </field>
         </record>
-
     </data>
 </odoo> 

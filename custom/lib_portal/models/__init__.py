@@ -1,6 +1,7 @@
 from . import res_partner
 from . import product_template
 from . import issue_book
-from . import hr_employee
-from . import stock_scrap
-
+from . import stock_picking
+from . import stock_move
+from . import stock_return_picking
+from . import settings

@@ -137,27 +137,27 @@
             <field name="name">Biography</field>
         </record>
 
-            <!-- Initial data for product category -->
+        <!-- Initial data for product category -->
 
-        <record id="product_category_1" model="product.category">
-            <field name="name" ref='res_partner_interest_6'/>
+        <record id="product_category_1" model="product.template">
+            <field name="name">Biography</field>
         </record>
 
         <record id="product_category_2" model="product.category">
-            <field name="name" ref='res_partner_interest_5'/>
+            <field name="name">Technical</field>
         </record>
 
-         <record id="product_category_3" model="product.category">
-    	    <field name="name" ref='res_partner_interest_1'/>
+        <record id="product_category_3" model="product.category">
+            <field name="name">Fantasy</field>
         </record>
 
-         <record id="product_category_4" model="product.category">
-            <field name="name" ref='res_partner_interest_5'/>
+        <record id="product_category_4" model="product.category">
+            <field name="name">Romantic</field>
         </record>
 
         <record id="product_category_5" model="product.category">
-            <field name="name" ref='res_partner_interest_2'/>
-        </record>            
-        
+            <field name="name">Mystery</field>
+        </record>
+
     </data>
 </odoo>

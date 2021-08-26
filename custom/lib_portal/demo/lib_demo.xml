@@ -4,7 +4,6 @@
                     <!-- Demo data for customers -->
 
         <record id="lib_customer_1" model="res.partner">
-            <!-- <field name="partner_id" ref="base.partner_demo"/> -->
             <field name="name">Jason Stathom</field>
             <field name="is_company">0</field>
             <field name="date_of_birth">1996-12-03</field>
@@ -99,45 +98,5 @@
             <field name="book_language" ref="base.lang_en"/>
             <field name="image_1920" type="base64" file="lib_portal/static/img/lib_book_3.jpeg"/>
         </record>
-        
-
-                <!-- Demo Data for booking -->
-
-        <record id="booking_demo_1" model="issue.book">
-            <field name="book_id" ref="lib_book_1"/>
-            <field name="partner_id" ref="lib_customer_1"/>
-            <field name="from_date">2021-01-04</field>
-            <field name="due_date">2021-02-04</field>
-            <field name="employee_id" ref="hr.employee_niv"/>
-            <field name="state">plan</field>
-        </record> 
-
-         <record id="booking_demo_2" model="issue.book">
-            <field name="book_id" ref="lib_book_demo_2"/>
-            <field name="partner_id" ref="lib_customer_2"/>
-            <field name="from_date">2021-03-03</field>
-            <field name="due_date">2021-04-03</field>
-            <field name="employee_id" ref="hr.employee_niv"/>
-            <field name="state">pick</field> 
-        </record> 
-
-        <record id="booking_demo_3" model="issue.book">
-            <field name="book_id" ref="lib_book_3"/>
-            <field name="partner_id" ref="lib_customer_3"/>
-            <field name="from_date">2021-01-04</field>
-            <field name="due_date">2021-02-04</field>
-            <field name="employee_id" ref="hr.employee_niv"/>
-             <field name="state">late</field> 
-        </record> 
-
-        <record id="booking_demo_4" model="issue.book">
-            <field name="book_id" ref="lib_book_1"/>
-            <field name="partner_id" ref="lib_customer_1"/>
-            <field name="from_date">2021-01-04</field>
-            <field name="due_date">2021-02-04</field>
-            <field name="employee_id" ref="hr.employee_niv"/>
-            <field name="state">return</field> 
-        </record> 
-
     </data>
 </odoo>

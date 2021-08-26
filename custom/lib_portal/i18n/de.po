@@ -1,0 +1,1065 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* lib_portal
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-21 18:58+0000\n"
+"PO-Revision-Date: 2021-08-21 18:58+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: lib_portal
+#: model:product.template,name:lib_portal.book_demo_1
+msgid " In Search of Lost Time"
+msgstr "Auf der Suche nach der verlorenen Zeit"
+
+#. module: lib_portal
+#: model:ir.actions.report,print_report_name:lib_portal.bookings_detail_report
+msgid "'Booking Details'"
+msgstr "Buchungsdetails"
+
+#. module: lib_portal
+#: model:ir.actions.report,print_report_name:lib_portal.contacts_booking_report
+msgid "'Bookings History Report'"
+msgstr "Bericht zum Buchungsverlauf"
+
+#. module: lib_portal
+#: model:mail.template,subject:lib_portal.email_template_status_late
+msgid ""
+"(Ref ${object.name or 'n/a'}) : Magdeburg Library Overdue Notification of "
+"book ${object.book_name} "
+msgstr ""
+
+#. module: lib_portal
+#: model:mail.template,body_html:lib_portal.email_template_status_late
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"        Dear ${object.partner_id.name} \n"
+"        <br/><br/>\n"
+"        Our Library records indicate that the following book is overdue. \n"
+"        <br/><br/>\n"
+"        % if object.book_name:\n"
+"            Title: <strong>${object.book_name}</strong>\n"
+"        % else:\n"
+"            Title:\n"
+"        %endif\n"
+"        <br/>\n"
+"        % if object.name:\n"
+"            Reference: ${object.name}\n"
+"        % endif\n"
+"        <br/>\n"
+"        % if object.due_date:\n"
+"             Due Date: ${object.due_date}\n"
+"        % endif\n"
+"        <br/>\n"
+"        % if object.author_name:\n"
+"             Author: ${object.author_name}\n"
+"        % endif\n"
+"        <br/><br/>\n"
+"        Please return the book at your earliest convenience.Or if you want to renew, please contact staff at the library  as soon as possible.\n"
+"         <br/><br/>\n"
+"        Do not hesitate to contact us if you have any questions.\n"
+"        <br/><br/>\n"
+"        \n"
+"        Magdeburg City Library <br/>\n"
+"        Walther Rathenau Strasse <br/>\n"
+"        39104 <br/>\n"
+"        +49 1734567890 <br/>\n"
+"\n"
+"    </p>\n"
+"</div>                      \n"
+"        "
+msgstr ""
+
+#. module: lib_portal
+#: model_terms:ir.ui.view,arch_db:lib_portal.booking_detail
+#: model_terms:ir.ui.view,arch_db:lib_portal.booking_report
+msgid ""
+"<span>\n"
+"                                                        <strong>Author:</strong>\n"
+"                                                    </span>"
+msgstr ""
+
+#. module: lib_portal
+#: model_terms:ir.ui.view,arch_db:lib_portal.booking_detail
+#: model_terms:ir.ui.view,arch_db:lib_portal.booking_report
+msgid ""
+"<span>\n"
+"                                                        <strong>Due Date:</strong>\n"
+"                                                    </span>"
+msgstr ""
+
+#. module: lib_portal
+#: model_terms:ir.ui.view,arch_db:lib_portal.booking_detail
+#: model_terms:ir.ui.view,arch_db:lib_portal.booking_report
+msgid ""
+"<span>\n"
+"                                                        <strong>Reference:</strong>\n"
+"                                                    </span>"
+msgstr ""
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__message_needaction
+msgid "Action Needed"
+msgstr "Handlungsbedarf"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__activity_ids
+msgid "Activities"
+msgstr "Aktivitäten"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Aktivitätsausnahmedekoration"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__activity_state
+msgid "Activity State"
+msgstr "Aktivitätsstatus"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Symbol für Aktivitätstyp"
+
+#. module: lib_portal
+#: model_terms:ir.actions.act_window,help:lib_portal.action_book_publishers
+msgid "Add a new Publisher"
+msgstr "Neuen Publisher hinzufügen"
+
+#. module: lib_portal
+#: model_terms:ir.actions.act_window,help:lib_portal.action_book_authors
+msgid "Add a new author"
+msgstr "Neuen Autor hinzufügen"
+
+#. module: lib_portal
+#: model:ir.ui.menu,name:lib_portal.book_list_menu
+msgid "All Books"
+msgstr "Alle Bücher"
+
+#. module: lib_portal
+#: model_terms:ir.ui.view,arch_db:lib_portal.book_scrap_warning_form
+msgid "Are you sure you want to scrap?"
+msgstr "Möchten Sie wirklich verschrotten?"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__message_attachment_count
+msgid "Attachment Count"
+msgstr "Anhangsanzahl"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__author_name
+#: model_terms:ir.ui.view,arch_db:lib_portal.view_issue_book_search
+msgid "Author"
+msgstr "Autorin"
+
+#. module: lib_portal
+#: model_terms:ir.ui.view,arch_db:lib_portal.view_issue_book_search
+msgid "Author Name"
+msgstr "Autoren name"
+
+#. module: lib_portal
+#: model_terms:ir.ui.view,arch_db:lib_portal.view_issue_book_kanban
+msgid "Author Name :"
+msgstr "Autoren name:"
+
+#. module: lib_portal
+#: model:ir.actions.act_window,name:lib_portal.action_book_authors
+#: model:ir.ui.menu,name:lib_portal.book_authors_menu
+#: model_terms:ir.ui.view,arch_db:lib_portal.view_res_partner_inherit_search
+msgid "Authors"
+msgstr "Autorinnen"
+
+#. module: lib_portal
+#: model:res.partner.category,name:lib_portal.res_partner_interest_6
+msgid "Biography"
+msgstr "Biografie"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__book_id
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__book_name
+#: model:ir.model.fields,field_description:lib_portal.field_lib_booking_lines__book_id
+#: model:ir.model.fields,field_description:lib_portal.field_lib_booking_lines__book_name
+#: model:ir.model.fields,field_description:lib_portal.field_res_partner__book_ids
+#: model:ir.model.fields,field_description:lib_portal.field_res_users__book_ids
+#: model_terms:ir.ui.view,arch_db:lib_portal.view_issue_book_search
+msgid "Book"
+msgstr "Buch"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_product_product__description
+#: model:ir.model.fields,field_description:lib_portal.field_product_template__description
+msgid "Book Description"
+msgstr "Buchbeschreibung"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_product_product__categ_id
+#: model:ir.model.fields,field_description:lib_portal.field_product_template__categ_id
+msgid "Book Genre"
+msgstr "Buchgenre"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_product_template__barcode
+msgid "Book ISBN"
+msgstr "ISBN . buchen"
+
+#. module: lib_portal
+#: model_terms:ir.ui.view,arch_db:lib_portal.view_issue_book_tree
+msgid "Book Issue records"
+msgstr "Buchausgabe-Aufzeichnungen"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_product_product__book_language
+#: model:ir.model.fields,field_description:lib_portal.field_product_template__book_language
+msgid "Book Language"
+msgstr "Buchsprache"
+
+#. module: lib_portal
+#: model_terms:ir.ui.view,arch_db:lib_portal.view_issue_book_search
+msgid "Book Name"
+msgstr "Buchname"
+
+#. module: lib_portal
+#: model_terms:ir.ui.view,arch_db:lib_portal.view_issue_book_kanban
+msgid "Book Name:"
+msgstr "Buch name:"
+
+#. module: lib_portal
+#: model:mail.template,report_name:lib_portal.email_template_status_late
+msgid "Book_Issued_${(object.name or '')"
+msgstr "Buch ausgestellt_${(object.name or '')"
+
+#. module: lib_portal
+#: model:ir.actions.act_window,name:lib_portal.books_template_action
+#: model:ir.model.fields,field_description:lib_portal.field_product_product__booking_ids
+#: model:ir.model.fields,field_description:lib_portal.field_product_template__booking_ids
+#: model:ir.model.fields,field_description:lib_portal.field_res_partner__booking_ids
+#: model:ir.model.fields,field_description:lib_portal.field_res_users__booking_ids
+msgid "Booking"
+msgstr "Buchung"
+
+#. module: lib_portal
+#: model:ir.actions.report,name:lib_portal.bookings_detail_report
+msgid "Booking Detail Report"
+msgstr "Buchungsdetailbericht"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_lib_booking_lines__issue_id
+msgid "Booking ID"
+msgstr "Buchungs-ID"
+
+#. module: lib_portal
+#: model:ir.model,name:lib_portal.model_lib_booking_lines
+msgid "Booking Lines"
+msgstr "Buchungszeilen"
+
+#. module: lib_portal
+#: model_terms:ir.ui.view,arch_db:lib_portal.product_template_product_form_inherit
+msgid "Bookings"
+msgstr "Buchungen"
+
+#. module: lib_portal
+#: model_terms:ir.ui.view,arch_db:lib_portal.view_issue_book_form
+msgid "Bookings History"
+msgstr "Buchungsverlauf"
+
+#. module: lib_portal
+#: model:ir.actions.act_window,name:lib_portal.action_all_books
+#: model:ir.ui.menu,name:lib_portal.books_menu
+#: model_terms:ir.ui.view,arch_db:lib_portal.product_template_search_view_inherit
+#: model_terms:ir.ui.view,arch_db:lib_portal.view_issue_book_search
+msgid "Books"
+msgstr "Bücher"
+
+#. module: lib_portal
+#: model_terms:ir.ui.view,arch_db:lib_portal.view_issue_book_calendar
+msgid "Calendar View"
+msgstr "Kalenderansicht"
+
+#. module: lib_portal
+#: model_terms:ir.ui.view,arch_db:lib_portal.book_scrap_warning_form
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_res_config_settings__email
+#: model_terms:ir.ui.view,arch_db:lib_portal.res_config_settings_view_form
+msgid "Company Mail Address"
+msgstr "E-Mail-Adresse des Unternehmens"
+
+#. module: lib_portal
+#: model:ir.model,name:lib_portal.model_res_config_settings
+msgid "Config Settings"
+msgstr "Konfiguration "
+
+#. module: lib_portal
+#: model:ir.ui.menu,name:lib_portal.lib_config_menu
+msgid "Configuration"
+msgstr "Konfiguration"
+
+#. module: lib_portal
+#: model_terms:ir.ui.view,arch_db:lib_portal.book_scrap_warning_form
+msgid "Confirm"
+msgstr "Bestätigen Sie"
+
+#. module: lib_portal
+#: model:ir.model,name:lib_portal.model_res_partner
+msgid "Contact"
+msgstr "Kontakt"
+
+#. module: lib_portal
+#: model:ir.ui.menu,name:lib_portal.res_partner_menu
+msgid "Contacts"
+msgstr "Kontakte"
+
+#. module: lib_portal
+#: model_terms:ir.actions.act_window,help:lib_portal.action_book_publishers
+msgid "Create a Publisher"
+msgstr "Erstellen Sie einen Publisher"
+
+#. module: lib_portal
+#: model_terms:ir.actions.act_window,help:lib_portal.action_book_authors
+msgid "Create a author for the books"
+msgstr "Erstellen Sie einen Autor für die Bücher"
+
+#. module: lib_portal
+#: model_terms:ir.actions.act_window,help:lib_portal.action_all_books
+msgid "Create a new product"
+msgstr "Erstellen Sie ein neues Produkt"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__create_uid
+#: model:ir.model.fields,field_description:lib_portal.field_lib_booking_lines__create_uid
+#: model:ir.model.fields,field_description:lib_portal.field_stock_scrap_wizard__create_uid
+msgid "Created by"
+msgstr "Erstellt von"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__create_date
+#: model:ir.model.fields,field_description:lib_portal.field_lib_booking_lines__create_date
+#: model:ir.model.fields,field_description:lib_portal.field_stock_scrap_wizard__create_date
+msgid "Created on"
+msgstr "Erstellt am"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__customer_name
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__partner_id
+#: model_terms:ir.ui.view,arch_db:lib_portal.view_issue_book_search
+msgid "Customer"
+msgstr ""
+
+#. module: lib_portal
+#: model_terms:ir.ui.view,arch_db:lib_portal.booking_report
+msgid "Customer :"
+msgstr "Kunden"
+
+#. module: lib_portal
+#: model_terms:ir.ui.view,arch_db:lib_portal.view_issue_book_search
+msgid "Customer Name"
+msgstr "Kunden Name"
+
+#. module: lib_portal
+#: model_terms:ir.ui.view,arch_db:lib_portal.view_issue_book_kanban
+msgid "Customer Name :"
+msgstr "Kunden Name"
+
+#. module: lib_portal
+#: model:ir.ui.menu,name:lib_portal.library_customers_menu
+msgid "Customers"
+msgstr "Kunde"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_res_partner__date_of_birth
+#: model:ir.model.fields,field_description:lib_portal.field_res_users__date_of_birth
+msgid "Date of Birth"
+msgstr "Geburtsdatum"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_res_partner__date_of_death
+#: model:ir.model.fields,field_description:lib_portal.field_res_users__date_of_death
+msgid "Date of Death"
+msgstr "Sterbedatum"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_hr_employee__display_name
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__display_name
+#: model:ir.model.fields,field_description:lib_portal.field_lib_booking_lines__display_name
+#: model:ir.model.fields,field_description:lib_portal.field_product_template__display_name
+#: model:ir.model.fields,field_description:lib_portal.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:lib_portal.field_res_partner__display_name
+#: model:ir.model.fields,field_description:lib_portal.field_stock_move__display_name
+#: model:ir.model.fields,field_description:lib_portal.field_stock_picking__display_name
+#: model:ir.model.fields,field_description:lib_portal.field_stock_return_picking__display_name
+#: model:ir.model.fields,field_description:lib_portal.field_stock_scrap__display_name
+#: model:ir.model.fields,field_description:lib_portal.field_stock_scrap_wizard__display_name
+msgid "Display Name"
+msgstr "Anzeigename"
+
+#. module: lib_portal
+#: model:ir.model.fields.selection,name:lib_portal.selection__issue_book__state__draft
+msgid "Draft"
+msgstr ""
+
+#. module: lib_portal
+#: model_terms:ir.ui.view,arch_db:lib_portal.view_issue_book_search
+msgid "Due Date"
+msgstr "Luftzug"
+
+#. module: lib_portal
+#: model_terms:ir.ui.view,arch_db:lib_portal.view_issue_book_kanban
+msgid "Due Date:"
+msgstr "Geburtstermin"
+
+#. module: lib_portal
+#: model:ir.model,name:lib_portal.model_hr_employee
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__employee_id
+#: model_terms:ir.ui.view,arch_db:lib_portal.view_issue_book_search
+msgid "Employee"
+msgstr "Mitarbeiter"
+
+#. module: lib_portal
+#: model:ir.ui.menu,name:lib_portal.library_employee_menu
+msgid "Employees"
+msgstr "Mitarbeiter"
+
+#. module: lib_portal
+#: model:res.partner.category,name:lib_portal.res_partner_interest_4
+msgid "Fantasy"
+msgstr "Fantasie"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__message_follower_ids
+msgid "Followers"
+msgstr "Anhänger"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Anhänger"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Anhänger"
+
+#. module: lib_portal
+#: model:ir.model.fields,help:lib_portal.field_issue_book__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: lib_portal
+#: model_terms:ir.ui.view,arch_db:lib_portal.view_issue_book_search
+msgid "From Date"
+msgstr "Ab Datum"
+
+#. module: lib_portal
+#: model_terms:ir.ui.view,arch_db:lib_portal.view_issue_book_kanban
+msgid "From Date:"
+msgstr "Ab Datum: "
+
+#. module: lib_portal
+#: model_terms:ir.ui.view,arch_db:lib_portal.view_issue_book_search
+msgid "Group By"
+msgstr "Gruppiere nach"
+
+#. module: lib_portal
+#: model:product.template,name:lib_portal.lib_book_3
+msgid "History of Wolves"
+msgstr "Geschichte der Wölfe"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_hr_employee__id
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__id
+#: model:ir.model.fields,field_description:lib_portal.field_lib_booking_lines__id
+#: model:ir.model.fields,field_description:lib_portal.field_product_template__id
+#: model:ir.model.fields,field_description:lib_portal.field_res_config_settings__id
+#: model:ir.model.fields,field_description:lib_portal.field_res_partner__id
+#: model:ir.model.fields,field_description:lib_portal.field_stock_move__id
+#: model:ir.model.fields,field_description:lib_portal.field_stock_picking__id
+#: model:ir.model.fields,field_description:lib_portal.field_stock_return_picking__id
+#: model:ir.model.fields,field_description:lib_portal.field_stock_scrap__id
+#: model:ir.model.fields,field_description:lib_portal.field_stock_scrap_wizard__id
+msgid "ID"
+msgstr ""
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: lib_portal
+#: model:ir.model.fields,help:lib_portal.field_issue_book__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: lib_portal
+#: model:ir.model.fields,help:lib_portal.field_issue_book__message_needaction
+#: model:ir.model.fields,help:lib_portal.field_issue_book__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: lib_portal
+#: model:ir.model.fields,help:lib_portal.field_issue_book__message_has_error
+#: model:ir.model.fields,help:lib_portal.field_issue_book__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__image_1920
+msgid "Image"
+msgstr ""
+
+#. module: lib_portal
+#: model:product.template,name:lib_portal.lib_book_1
+msgid "Indira Gandhi: A Life in Nature"
+msgstr "Bild"
+
+#. module: lib_portal
+#: model_terms:ir.ui.view,arch_db:lib_portal.res_partner_form_inherit
+msgid "Interests"
+msgstr "Interessen"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__is_author
+#: model:ir.model.fields,field_description:lib_portal.field_res_partner__is_author
+#: model:ir.model.fields,field_description:lib_portal.field_res_users__is_author
+msgid "Is a Author"
+msgstr "Ist ein Autor"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_product_product__is_book
+#: model:ir.model.fields,field_description:lib_portal.field_product_template__is_book
+msgid "Is a Book"
+msgstr "Ist ein Buch"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_res_partner__is_publisher
+#: model:ir.model.fields,field_description:lib_portal.field_res_users__is_publisher
+msgid "Is a Publisher"
+msgstr "Ist ein Verlag"
+
+#. module: lib_portal
+#: model:ir.ui.menu,name:lib_portal.book_issue_menu
+msgid "Issue Books"
+msgstr "Bücher ausgeben"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_product_product__issue_id
+#: model:ir.model.fields,field_description:lib_portal.field_product_template__issue_id
+msgid "Issue Reference"
+msgstr "Ausgabereferenz"
+
+#. module: lib_portal
+#: model_terms:ir.actions.act_window,help:lib_portal.books_template_action
+msgid "Issue a book by hitting on create!!"
+msgstr "Geben Sie ein Buch aus, indem Sie auf Erstellen klicken!"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_res_partner__languages_known
+#: model:ir.model.fields,field_description:lib_portal.field_res_users__languages_known
+msgid "Known Languages"
+msgstr "Bekannte Sprachen"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_hr_employee____last_update
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book____last_update
+#: model:ir.model.fields,field_description:lib_portal.field_lib_booking_lines____last_update
+#: model:ir.model.fields,field_description:lib_portal.field_product_template____last_update
+#: model:ir.model.fields,field_description:lib_portal.field_res_config_settings____last_update
+#: model:ir.model.fields,field_description:lib_portal.field_res_partner____last_update
+#: model:ir.model.fields,field_description:lib_portal.field_stock_move____last_update
+#: model:ir.model.fields,field_description:lib_portal.field_stock_picking____last_update
+#: model:ir.model.fields,field_description:lib_portal.field_stock_return_picking____last_update
+#: model:ir.model.fields,field_description:lib_portal.field_stock_scrap____last_update
+#: model:ir.model.fields,field_description:lib_portal.field_stock_scrap_wizard____last_update
+msgid "Last Modified on"
+msgstr "Zuletzt geändert am"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__write_uid
+#: model:ir.model.fields,field_description:lib_portal.field_lib_booking_lines__write_uid
+#: model:ir.model.fields,field_description:lib_portal.field_stock_scrap_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Zuletzt aktualisiert von"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__write_date
+#: model:ir.model.fields,field_description:lib_portal.field_lib_booking_lines__write_date
+#: model:ir.model.fields,field_description:lib_portal.field_stock_scrap_wizard__write_date
+msgid "Last Updated on"
+msgstr "Zuletzt aktualisiert am"
+
+#. module: lib_portal
+#: model:ir.model.fields.selection,name:lib_portal.selection__issue_book__state__late
+msgid "Late"
+msgstr "Spät"
+
+#. module: lib_portal
+#: model:ir.actions.server,name:lib_portal.ir_cron_scheduler_due_date_alert_ir_actions_server
+#: model:ir.cron,cron_name:lib_portal.ir_cron_scheduler_due_date_alert
+#: model:ir.cron,name:lib_portal.ir_cron_scheduler_due_date_alert
+msgid "Late Returns Cron Reminder"
+msgstr "Cron-Erinnerung bei verspäteter Rückgabe"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_res_config_settings__lend_duration
+msgid "Lend Period"
+msgstr "Leihfrist"
+
+#. module: lib_portal
+#: model_terms:ir.ui.view,arch_db:lib_portal.res_config_settings_view_form
+msgid "Lending Period"
+msgstr "Leihfrist"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_stock_move__library_id
+#: model:ir.model.fields,field_description:lib_portal.field_stock_picking__library_id
+#: model:ir.ui.menu,name:lib_portal.library_menu_root
+msgid "Library"
+msgstr "Bücherei"
+
+#. module: lib_portal
+#: model:ir.model,name:lib_portal.model_issue_book
+msgid "Library Book Lending Mangement"
+msgstr "Bibliotheksverwaltung für die Ausleihe von Büchern"
+
+#. module: lib_portal
+#: model_terms:ir.ui.view,arch_db:lib_portal.res_config_settings_view_form
+msgid "Library Management"
+msgstr "Bibliotheksverwaltung"
+
+#. module: lib_portal
+#: model_terms:ir.ui.view,arch_db:lib_portal.res_config_settings_view_form
+msgid "Library Portal"
+msgstr "Bibliotheksportal"
+
+#. module: lib_portal
+#: model:ir.actions.act_window,name:lib_portal.action_lib_config_settings
+msgid "Library Settings"
+msgstr "Bibliothekseinstellungen"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: lib_portal
+#: model_terms:ir.ui.view,arch_db:lib_portal.view_issue_book_form
+msgid "Mark Returned"
+msgstr "Als zurückgekehrt markieren"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_res_partner__is_member
+#: model:ir.model.fields,field_description:lib_portal.field_res_users__is_member
+msgid "Membership Status"
+msgstr "Mitgliedschaftsstatus"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__move_id
+msgid "Move"
+msgstr ""
+
+#. module: lib_portal
+#: model:res.partner.category,name:lib_portal.res_partner_interest_2
+msgid "Mystery"
+msgstr "Geheimnis"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_product_product__author_name
+#: model:ir.model.fields,field_description:lib_portal.field_product_template__author_name
+msgid "Name"
+msgstr "Name"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: lib_portal
+#: model:ir.model.fields,help:lib_portal.field_issue_book__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: lib_portal
+#: model:ir.model.fields,help:lib_portal.field_issue_book__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: lib_portal
+#: model:ir.model.fields,help:lib_portal.field_issue_book__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: lib_portal
+#: model:ir.model.fields,help:lib_portal.field_product_template__qty_available
+msgid ""
+"On hand quantity which hasn't been reserved on a transfer, in the default "
+"unit of measure of the product"
+msgstr ""
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_product_product__partner_id
+#: model:ir.model.fields,field_description:lib_portal.field_product_template__partner_id
+msgid "Partner"
+msgstr ""
+
+#. module: lib_portal
+#: model:ir.model.fields.selection,name:lib_portal.selection__issue_book__state__pick
+msgid "Picked"
+msgstr "Ausgewählt"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__picking_id
+msgid "Picking"
+msgstr ""
+
+#. module: lib_portal
+#: model_terms:ir.ui.view,arch_db:lib_portal.view_issue_book_form
+msgid "Plan Booking"
+msgstr ""
+
+#. module: lib_portal
+#: model:ir.model.fields.selection,name:lib_portal.selection__issue_book__state__plan
+msgid "Planned"
+msgstr "Buchung planen"
+
+#. module: lib_portal
+#: model:ir.actions.report,name:lib_portal.contacts_booking_report
+msgid "Print Bookings History"
+msgstr "Buchungsverlauf drucken"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__product
+msgid "Product"
+msgstr "Produkt"
+
+#. module: lib_portal
+#: model:ir.model,name:lib_portal.model_product_template
+msgid "Product Template"
+msgstr "Produktvorlage"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_product_product__publication_date
+#: model:ir.model.fields,field_description:lib_portal.field_product_template__publication_date
+msgid "Publication Date"
+msgstr "Veröffentlichungsdatum"
+
+#. module: lib_portal
+#: model_terms:ir.ui.view,arch_db:lib_portal.res_partner_form_inherit
+msgid "Published Books"
+msgstr "Veröffentlichte Bücher"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_product_product__publisher_id
+#: model:ir.model.fields,field_description:lib_portal.field_product_template__publisher_id
+#: model:ir.model.fields,field_description:lib_portal.field_res_partner__publisher_ids
+#: model:ir.model.fields,field_description:lib_portal.field_res_users__publisher_ids
+msgid "Publisher"
+msgstr "Herausgeberin"
+
+#. module: lib_portal
+#: model:ir.actions.act_window,name:lib_portal.action_book_publishers
+#: model:ir.ui.menu,name:lib_portal.book_publisher_menu
+#: model_terms:ir.ui.view,arch_db:lib_portal.view_res_partner_inherit_search
+msgid "Publishers"
+msgstr "Verlag"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_product_product__quantity_id
+#: model:ir.model.fields,field_description:lib_portal.field_product_template__quantity_id
+msgid "Quantity"
+msgstr ""
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_product_template__qty_available
+msgid "Quantity On Hand"
+msgstr "Bestandsmenge"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__name
+msgid "Request Number"
+msgstr "Auftragsnummer"
+
+#. module: lib_portal
+#: model:ir.model.fields.selection,name:lib_portal.selection__issue_book__state__reserve
+msgid "Reserved"
+msgstr "Reserviert"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__activity_user_id
+msgid "Responsible User"
+msgstr "Verantwortlicher Benutzer"
+
+#. module: lib_portal
+#: code:addons/lib_portal/models/issue_book.py:0
+#, python-format
+msgid "Return"
+msgstr "Zurückkehren"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__due_date
+msgid "Return Date"
+msgstr "Rückflugdatum"
+
+#. module: lib_portal
+#: model:ir.model,name:lib_portal.model_stock_return_picking
+msgid "Return Picking"
+msgstr "Rücklieferschein"
+
+#. module: lib_portal
+#: model:ir.model.fields.selection,name:lib_portal.selection__issue_book__state__return
+msgid "Returned"
+msgstr "Ist zurückgekommen"
+
+#. module: lib_portal
+#: model:res.partner.category,name:lib_portal.res_partner_interest_3
+msgid "Romantic"
+msgstr "Romantisch"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: lib_portal
+#: model:res.partner.category,name:lib_portal.res_partner_interest_1
+msgid "Scifi"
+msgstr ""
+
+#. module: lib_portal
+#: model:ir.model,name:lib_portal.model_stock_scrap
+#: model_terms:ir.ui.view,arch_db:lib_portal.product_template_product_form_inherit
+msgid "Scrap"
+msgstr "Ausschuss melden"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_product_product__author_id
+#: model:ir.model.fields,field_description:lib_portal.field_product_template__author_id
+msgid "Select Author"
+msgstr "Autor auswählen"
+
+#. module: lib_portal
+#: model:ir.model.fields,help:lib_portal.field_product_product__categ_id
+#: model:ir.model.fields,help:lib_portal.field_product_template__categ_id
+msgid "Select category for the current product"
+msgstr "Kategorie für das neue Produkt wählen"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__sender_email
+msgid "Sender Email"
+msgstr "Absender E-Mail"
+
+#. module: lib_portal
+#: model:ir.ui.menu,name:lib_portal.lib_settings_menu
+msgid "Settings"
+msgstr "Einstellungen"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_product_template__default_code
+msgid "Shelf Location"
+msgstr ""
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__from_date
+msgid "Start Date"
+msgstr "Startdatum"
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__state
+#: model:ir.model.fields,field_description:lib_portal.field_stock_picking__state_lib
+msgid "Status"
+msgstr ""
+
+#. module: lib_portal
+#: model_terms:ir.ui.view,arch_db:lib_portal.view_issue_book_search
+msgid "Status = Late"
+msgstr "Status = Spät"
+
+#. module: lib_portal
+#: model_terms:ir.ui.view,arch_db:lib_portal.view_issue_book_search
+msgid "Status = Picked"
+msgstr "Status = Ausgewählt"
+
+#. module: lib_portal
+#: model_terms:ir.ui.view,arch_db:lib_portal.view_issue_book_search
+msgid "Status = Planned"
+msgstr "Status = Geplant"
+
+#. module: lib_portal
+#: model_terms:ir.ui.view,arch_db:lib_portal.view_issue_book_search
+msgid "Status = Return"
+msgstr "Status = Zurückkehren"
+
+#. module: lib_portal
+#: model:ir.model.fields,help:lib_portal.field_issue_book__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: lib_portal
+#: model:ir.model,name:lib_portal.model_stock_move
+msgid "Stock Move"
+msgstr "Lagerbuchung"
+
+#. module: lib_portal
+#: model:res.partner.category,name:lib_portal.res_partner_interest_5
+msgid "Technical"
+msgstr ""
+
+#. module: lib_portal
+#: model:ir.model.fields,help:lib_portal.field_issue_book__state
+#: model:ir.model.fields,help:lib_portal.field_stock_picking__state_lib
+msgid "The current state of the booking:"
+msgstr ""
+
+#. module: lib_portal
+#: model:product.template,description:lib_portal.book_demo_1
+msgid "This is a classic book"
+msgstr ""
+
+#. module: lib_portal
+#: model:product.template,description:lib_portal.lib_book_demo_2
+msgid "This is a mystery book by Hilary Clinton"
+msgstr ""
+
+#. module: lib_portal
+#: model:product.template,description:lib_portal.lib_book_3
+msgid "This is the about evolution of wolves"
+msgstr ""
+
+#. module: lib_portal
+#: model:product.template,description:lib_portal.lib_book_1
+msgid "This is the life story of Indira Gandhi"
+msgstr ""
+
+#. module: lib_portal
+#: model:res.partner.category,name:lib_portal.res_partner_interest_0
+msgid "Thriller"
+msgstr ""
+
+#. module: lib_portal
+#: model:ir.model,name:lib_portal.model_stock_picking
+msgid "Transfer"
+msgstr "Lieferung vornehmen"
+
+#. module: lib_portal
+#: model:ir.model.fields,help:lib_portal.field_issue_book__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: lib_portal
+#: model:product.template,uom_name:lib_portal.book_demo_1
+#: model:product.template,uom_name:lib_portal.lib_book_1
+#: model:product.template,uom_name:lib_portal.lib_book_3
+#: model:product.template,uom_name:lib_portal.lib_book_demo_2
+msgid "Units"
+msgstr ""
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: lib_portal
+#: model_terms:ir.ui.view,arch_db:lib_portal.stock_scrap_form_view_inherit
+msgid "Validate"
+msgstr "Bestätigen"
+
+#. module: lib_portal
+#: model_terms:ir.ui.view,arch_db:lib_portal.view_issue_book_form
+msgid "Validate Reserved"
+msgstr ""
+
+#. module: lib_portal
+#: model:ir.actions.act_window,name:lib_portal.book_scrap_action
+msgid "Warning!"
+msgstr ""
+
+#. module: lib_portal
+#: model:ir.model.fields,field_description:lib_portal.field_issue_book__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: lib_portal
+#: model:ir.model.fields,help:lib_portal.field_issue_book__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: lib_portal
+#: model:product.template,name:lib_portal.lib_book_demo_2
+msgid "What happened"
+msgstr ""
+
+#. module: lib_portal
+#: model_terms:ir.ui.view,arch_db:lib_portal.res_partner_form_inherit
+msgid "Written Books"
+msgstr "Geschriebene Bücher"
+
+#. module: lib_portal
+#: model_terms:ir.actions.act_window,help:lib_portal.books_template_action
+msgid "You must create a book issue order to issue a book to the customer."
+msgstr "Sie müssen einen Buchausgabeauftrag erstellen, um ein Buch an den Kunden auszugeben."
+
+#. module: lib_portal
+#: model_terms:ir.actions.act_window,help:lib_portal.action_all_books
+msgid ""
+"You must define a product for everything you sell or purchase,\n"
+"                    whether it's a storable product, a consumable or a service."
+msgstr ""
+
+#. module: lib_portal
+#: model:ir.model,name:lib_portal.model_stock_scrap_wizard
+msgid "stock.scrap.wizard"
+msgstr ""
