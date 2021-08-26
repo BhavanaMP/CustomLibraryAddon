@@ -58,9 +58,9 @@
             <field name="name">Indira Gandhi: A Life in Nature</field>
             <field name="is_book">True</field>
             <field name="type">product</field>
-            <field name="categ_id" ref="product_category_1"/>
+            <field name="categ_id">1</field>
             <field name="author_id" ref="partner_authors_3"/>
-             <field name="publisher_id" ref="partner_publishers_2"/> 
+            <field name="publisher_id" ref="partner_publishers_2"/> 
             <field name="qty_available">28.0</field>
             <field name="barcode">978139995345</field>
             <field name="description">This is the life story of Indira Gandhi</field>
@@ -72,10 +72,10 @@
         <record id="lib_book_demo_2" model="product.template">
             <field name="name">What happened</field>
             <field name="is_book">True</field>
-             <field name="type">product</field>
-            <field name="categ_id" ref="product_category_5"/>
+            <field name="type">product</field>
+            <field name="categ_id">1</field>
             <field name="author_id" ref="partner_authors_1"/>
-             <field name="publisher_id" ref="partner_publishers_3"/> 
+            <field name="publisher_id" ref="partner_publishers_3"/> 
             <field name="qty_available">40.0</field>
             <field name="barcode">9708399155346</field>
             <field name="description">This is a mystery book by Hilary Clinton</field>
@@ -88,9 +88,9 @@
             <field name="name">History of Wolves</field>
             <field name="is_book">True</field>
             <field name="type">product</field>
-            <field name="categ_id" ref="product_category_2"/>
+            <field name="categ_id">1</field>
             <field name="author_id" ref="partner_authors_2"/>
-             <field name="publisher_id" ref="partner_publishers_1"/> 
+            <field name="publisher_id" ref="partner_publishers_1"/> 
             <field name="qty_available">18.0</field>
             <field name="barcode">9780399055345</field>
             <field name="description">This is the about evolution of wolves</field>
