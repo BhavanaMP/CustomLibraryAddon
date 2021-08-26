@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_issue_book,issue.book,model_issue_book,,1,1,1,1
-access_library_wizard,library.wizard,model_library_wizard,,1,1,1,1
+access_issue_book,issue.book,model_issue_book,base.group_user,1,1,1,1
+access_library_wizard,stock.scrap.wizard,model_stock_scrap_wizard,base.group_user,1,1,1,1
+access_bookings_report_wizard,bookings.report.wiz,model_bookings_report_wiz,,1,1,1,1
